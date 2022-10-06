@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <script src="javascripts/jszip.min.js"></script>
+  <script src="javascripts/map.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9Fmb6Ssl5H1lx_TndC6Njmt4FAMuamzM&callback=initMap">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("comune").onkeypress = e => {
+        if (e.which == 10 || e.which == 13)
+          pickLocation();
+      }
+    });
+  </script>
+  <link rel="stylesheet" href="stylesheets/shared.css">
+  <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+  <div id="map"></div>
+  <div id="controls">
+    <div>
+      <label for="comune">Comune:</label>
+      <input id="comune" type="text" list="lista_comuni" autocomplete="off">
+      <datalist id="lista_comuni"></datalist>
+    </div>
+    <button id="submit" onclick="pickLocation()">Submit</button>
+  </div>
+</body>
