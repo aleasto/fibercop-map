@@ -71,8 +71,11 @@ function loadCabinetData() {
     })
     .then(JSZip.loadAsync)
     .then(zip => {
+      const date_regexp = /elenco_cro_cno_(\d+).csv/;
       for (f of Object.keys(zip.files)) {
-        if (f.startsWith("elenco_cro_cno")) {
+        let match = f.match(date_regexp)
+        if (match != null) {
+          document.getElementById("date_footer").innerHTML = "Last update: " + parseDate(match[1]).toLocaleDateString();
           return zip.file(f).async("string");
         }
       }
