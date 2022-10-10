@@ -80,11 +80,11 @@ function loadCabinetData() {
     })
     .then(s => {
       cabinets = csvToArray(s, ";");
-      comuni = [...new Set(cabinets.map(c=>c.COMUNE))];
-      datalist = document.getElementById("lista_comuni");
+      let comuni = [...new Set(cabinets.map(c=>c.COMUNE))];
+      let datalist = document.getElementById("lista_comuni");
       datalist.innerHTML = '';
       for (c of comuni) {
-        option = document.createElement('option');
+        let option = document.createElement('option');
         option.value = c;
         datalist.append(option);
       }
