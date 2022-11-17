@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <title>fibercop map</title>
   <meta name="viewport" content="width=device-width">
   <script src="javascripts/jszip.min.js"></script>
   <script src="javascripts/map.js"></script>
@@ -14,18 +15,20 @@
       }
     });
   </script>
-  <link rel="stylesheet" href="stylesheets/shared.css">
   <link rel="stylesheet" href="stylesheets/index.css">
 </head>
 <body>
-  <div id="map"></div>
+  <header>
+    <h1>fibercop map</h1>
+  </header>
   <div id="controls">
-    <div>
+    <div class="controls-group">
       <label for="comune">Comune:</label>
-      <input id="comune" type="text" list="lista_comuni" autocomplete="off">
+      <input id="comune" type="text" list="lista_comuni" autocomplete="off" placeholder="Cerca...">
+      <button id="submit" onclick="pickLocation()">Submit</button>
       <datalist id="lista_comuni"></datalist>
     </div>
-    <button id="submit" onclick="pickLocation()">Submit</button>
   </div>
+  <div id="map"></div>
   <footer id="date_footer"></footer>
 </body>
