@@ -61,7 +61,7 @@ function addCircle(c) {
 }
 
 function loadCabinetData() {
-  fetch("https://api.allorigins.win/raw?url=https://www.fibercop.it/wp-content/uploads/2021/06/elenco_cro_cno.zip")
+  fetch("https://corsproxy.io/?https://www.fibercop.it/wp-content/uploads/2021/06/elenco_cro_cno.zip")
     .then(response => {
       if (response.status === 200 || response.status === 0) {
         return response.blob();
